@@ -3,6 +3,7 @@ Overview
 This API provides endpoints for user authentication, vendor profile management, and order management. It uses Express.js, Prisma, and PostgreSQL, with JWT-based authentication via HTTP-only cookies. All endpoints are documented in Swagger at /api-docs.
 Base URL
 http://localhost:5000
+post man url = https://documenter.getpostman.com/view/20440383/2sB34Zsk9d
 Authentication
 Most endpoints require a JWT token, sent as an HTTP-only cookie named token. Obtain the token via /auth/register or /auth/login. Include the cookie in requests using tools like curl (--cookie) or Postman.
 Endpoints
@@ -422,31 +423,31 @@ Common status codes: 400 (bad request), 401 (unauthorized), 403 (forbidden), 404
 Testing with curl
 Example workflow:
 
-Register:curl -X POST http://localhost:3000/auth/register \
+Register:curl -X POST http://localhost:5000/auth/register \
 -H "Content-Type: application/json" \
 -d '{"name":"Jane Vendor","email":"email":"jane@example.com","password":"password123"}' \
 --cookie-jar cookies.txt
 
 
-Create vendor profile:curl -X POST http://localhost:3000/vendors \
+Create vendor profile:curl -X POST http://localhost:5000/vendors \
 -H "Content-Type: application/json" \
 -b cookies.txt \
 -d '{"businessName":"Jane\'s Shop","businessAddress":"123 Market St","phoneNumber":"+1234567890"}'
 
 
-Create order:curl -X POST http://localhost:3000/orders \
+Create order:curl -X POST http://localhost:5000/orders \
 -H "Content-Type: application/json" \
 -b cookies.txt \
 -d '{"amount":99.99,"currency":"USD","item":"Laptop"}'
 
 
-Delete vendor profile (and orders):curl -X DELETE http://localhost:3000/vendors \
+Delete vendor profile (and orders):curl -X DELETE http://localhost:5000/vendors \
 -b cookies.txt
 
 
 
 Swagger UI
-Access interactive documentation at http://localhost:3000/api-docs. Use the "Try it out" feature to test endpoints with a valid token cookie.
+Access interactive documentation at http://localhost:5000/api-docs. Use the "Try it out" feature to test endpoints with a valid token cookie.
 Notes
 
 Security: Tokens are HTTP-only cookies for enhanced security.

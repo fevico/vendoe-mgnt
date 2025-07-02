@@ -86,11 +86,7 @@ export class AuthController {
         user: {
           id: user.id,
           name: user.name,
-          email: user.email,
           role: user.role,
-          businessName: user.businessName,
-          businessAddress: user.businessAddress,
-          phoneNumber: user.phoneNumber,
           isActive: user.isActive,
         },
       });
