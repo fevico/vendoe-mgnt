@@ -63,6 +63,7 @@ npm start
 The server runs on http://localhost:5000 (or the port specified in .env).
 8. Access Swagger Documentation
 Open http://localhost:5000/api-docs in a browser to view and test API endpoints.
+post man url = https://documenter.getpostman.com/view/20440383/2sB34Zsk9d
 Project Structure
 ├── src/
 │   ├── config/           # Swagger and other configurations
